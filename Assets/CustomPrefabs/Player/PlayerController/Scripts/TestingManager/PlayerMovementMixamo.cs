@@ -6,6 +6,7 @@ public class PlayerMovementMixamo : MonoBehaviour
 {
     public Animator animator;
     private Rigidbody rb;
+    public float speedmovement = 0.1f;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class PlayerMovementMixamo : MonoBehaviour
 
         Vector3 movement = transform.forward * verticalAxis + transform.right * horizontalAxis;
         movement.Normalize();
-        transform.position += movement * 0.1f;
+        transform.position += movement * speedmovement * Time.deltaTime;
 
         
 
