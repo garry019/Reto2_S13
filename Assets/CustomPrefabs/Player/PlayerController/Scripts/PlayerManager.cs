@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     InputManager inputManager;
     PlayerLocomotion playerLocomotion;
+    Animator animator;
 
     private void Awake()
     {
@@ -21,5 +22,10 @@ public class PlayerManager : MonoBehaviour
     private void FixedUpdate()
     {
         playerLocomotion.HandleAllMovement();
+    }
+
+    private void LateUpdate()
+    {
+        playerLocomotion.isJumping = animator.GetBool("isJumping");
     }
 }

@@ -9,9 +9,16 @@ public class PlayerLocomotion : MonoBehaviour
     Vector3 moveDirection;
     Transform cameraObject;
     Rigidbody playerRigidBody;
+    AnimatorManager animatorManager;
 
     public float movementSpeed = 7;
+    public float sprintSpeed = 12;
     public float rotationSpeed = 15;
+
+    public bool isGrounded;
+    public bool isJumping;
+
+    public LayerMask groundLayer;
 
     private void Awake()
     {
@@ -24,6 +31,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         handleMovement();
         HandleRotation();
+        //HandleJumping();
     }
 
     private void handleMovement()
@@ -53,5 +61,13 @@ public class PlayerLocomotion : MonoBehaviour
         Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         transform.rotation = playerRotation;
+    }
+
+    public void HandleJumping()
+    {
+        if (isGrounded)
+        {
+            //animatorManager
+        }
     }
 }
