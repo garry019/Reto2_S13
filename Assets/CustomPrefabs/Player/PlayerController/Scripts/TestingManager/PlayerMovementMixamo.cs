@@ -13,10 +13,29 @@ public class PlayerMovementMixamo : MonoBehaviour
 
     public bool isSprinting;
     public bool isGrounded;
+    public bool isJumping;
+    private float jumpForce = 2.2f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isGrounded = true;
+        isJumping = false;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        isGrounded = false;
+    }
+
+    private void Update()
+    {
+        animator.SetBool("IsGrounded", isGrounded);
+        animator.SetBool("IsJumping", isJumping);
     }
 
     private void FixedUpdate()
@@ -29,9 +48,11 @@ public class PlayerMovementMixamo : MonoBehaviour
         float verticalAxis = Input.GetAxis("Vertical");
         float horizontalAxis = Input.GetAxis("Horizontal");
 
-        if (!isGrounded)
-            Debug.Log("On Air");
-        animator.SetBool("isJumping", true);
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        {
+            isJumping = true;
+            Jump();
+        }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -53,5 +74,10 @@ public class PlayerMovementMixamo : MonoBehaviour
 
         animator.SetFloat("Vertical", verticalAxis);
         animator.SetFloat("Horizontal", horizontalAxis);
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 }
