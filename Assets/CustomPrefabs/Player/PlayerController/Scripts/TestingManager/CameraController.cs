@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public PlayerMovementMixamo playerMovement;
 
-    public float sesitivity = 0;
+    private float sesitivity = -100;
     private float clampAngle = 30;
 
     private float verticalRotation;
