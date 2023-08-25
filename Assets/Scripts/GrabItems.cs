@@ -18,15 +18,15 @@ public class GrabItems : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && canTake)
         {
-            TakeTrash();
             canTake = false;
+            TakeTrash();
+            
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && gameObject.tag == "Grabable_Trash")
         {
-            Debug.Log("Take Trash");
             canTake = true;
         }
         else 

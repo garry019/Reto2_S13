@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grabable_Trash
+  - TrashCan
   layers:
   - Default
   - TransparentFX
