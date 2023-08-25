@@ -7,6 +7,7 @@ public class DropItems : MonoBehaviour
     GameObject gmObject;
     GameManager gameManager;
     private bool canDrop;
+    private int pollutionScore;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,8 @@ public class DropItems : MonoBehaviour
 
     private void DropTrash()
     {
+        pollutionScore = gameManager.score * 10;
         gameManager.score = 0;
+        gameManager.sliderValue = gameManager.sliderValue - pollutionScore;
     }
 }
