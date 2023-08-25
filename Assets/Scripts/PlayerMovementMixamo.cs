@@ -23,13 +23,21 @@ public class PlayerMovementMixamo : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        isGrounded = true;
-        isJumping = false;
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+            isJumping = false;
+        }
+        
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        isGrounded = false;
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+        
     }
 
     private void Update()

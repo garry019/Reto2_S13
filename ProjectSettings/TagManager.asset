@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grabable_Trash
   - TrashCan
+  - Ground
   layers:
   - Default
   - TransparentFX
