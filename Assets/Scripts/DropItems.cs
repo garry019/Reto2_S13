@@ -31,17 +31,17 @@ public class DropItems : MonoBehaviour
         if (other.gameObject.tag == "Player" && gameObject.tag == "TrashCan")
         {
             canDrop = true;
-            
         }
-        else
-        {
-            canDrop = false;
-        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canDrop = false;
     }
 
     private void DropTrash()
     {
-        pollutionScore = gameManager.score * 10;
+        pollutionScore = gameManager.score * 20;
         gameManager.score = 0;
         gameManager.sliderValue = gameManager.sliderValue - pollutionScore;
     }

@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pollutionScore;
     public int sliderValue;
     public int score = 5;
+    public bool canReforest;
 
     private void Start()
     {
-        //Debug.Log("Hide Cursor");
         Cursor.visible = false;
         pollutionSlider = GameObject.Find("Slider");
         slider = pollutionSlider.GetComponent<Slider>();
@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         slider.value = sliderValue;
         pollutionScore.text = slider.value.ToString();
         trashScore.text = score.ToString();
+        Debug.Log("Can Reforest "+canReforest);
+        if (slider.value == 100)
+        {
+            canReforest = true;
+        }
     }
 
 }
