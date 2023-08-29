@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     GameObject forestAreaIcon;
     GameObject sowArea1Icon;
     GameObject sowArea2Icon;
+    GameObject credits;
+    GameObject canvasUI;
     Slider slider;
     
     [SerializeField] private TextMeshProUGUI trashScore;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     public bool canTakeOldTrees;
     public int treesCollected;
     public int treesSown;
+    
 
     public bool canSow;
 
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
         forestAreaIcon = GameObject.Find("ForestAreaText");
         sowArea1Icon = GameObject.Find("SowArea1");
         sowArea2Icon = GameObject.Find("SowArea2");
+        credits = GameObject.Find("CreditsCanvas");
+        canvasUI = GameObject.Find("Canvas");
         slider = pollutionSlider.GetComponent<Slider>();
         sliderValue = 100;
         treesCollected = 0;
@@ -41,11 +46,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //slider.value = sliderValue;
-        //pollutionScore.text = slider.value.ToString();
+        slider.value = sliderValue;
+        pollutionScore.text = slider.value.ToString();
         trashScore.text = score.ToString();
  
-        /*if (slider.value == 0)
+        if (slider.value == 0)
         {
             canReforest = true;
             canTakeOldTrees = true;
@@ -62,7 +67,7 @@ public class GameManager : MonoBehaviour
         else
         {
             canReforest = false;
-        }*/
+        }
 
         if (treesCollected == 9)
         {
@@ -81,6 +86,9 @@ public class GameManager : MonoBehaviour
             MissionText.text = "!Nuestro parque esta libre de contaminación!";
             sowArea1Icon.GetComponent<MeshRenderer>().enabled = false;
             sowArea2Icon.GetComponent<MeshRenderer>().enabled = false;
+            credits.GetComponent<Canvas>().enabled = true;
+            canvasUI.GetComponent<Canvas>().enabled = false;
+            Cursor.visible = true;
         }
     }
 }
