@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0
+  m_FogDensity: 0.01
   m_LinearFogStart: 1.15
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -5071,7 +5071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 315293073292779126, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.64
+      value: 44.12
       objectReference: {fileID: 0}
     - target: {fileID: 315293073292779126, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5091,7 +5091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 315293073292779126, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 58.38
+      value: 58.17
       objectReference: {fileID: 0}
     - target: {fileID: 315293073292779126, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
       propertyPath: m_AnchoredPosition.y

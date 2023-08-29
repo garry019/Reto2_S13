@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
                 icon.GetComponent<MeshRenderer>().enabled = false;
             }
             forestAreaIcon.GetComponent<MeshRenderer>().enabled = true;
+            RenderSettings.fogDensity = 0f;
         }
         else
         {
