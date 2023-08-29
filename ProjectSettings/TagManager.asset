@@ -7,6 +7,8 @@ TagManager:
   - Grabable_Trash
   - TrashCan
   - Ground
+  - Old_Tree
+  - TreeToSow
   layers:
   - Default
   - TransparentFX

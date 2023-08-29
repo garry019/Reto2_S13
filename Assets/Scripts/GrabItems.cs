@@ -37,7 +37,6 @@ public class GrabItems : MonoBehaviour
 
     private void TakeTrash()
     {
-        Debug.Log("Trash to Inventory & Destroy");
         gameManager.score++;
         Destroy(gameObject);
     }
