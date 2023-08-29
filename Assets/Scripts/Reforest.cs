@@ -40,7 +40,6 @@ public class Reforest : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && gameObject.tag == "TreeToSow")
         {
-            Debug.Log("Sow Now");
             sowing = true;
         }
     }
@@ -56,10 +55,19 @@ public class Reforest : MonoBehaviour
         Destroy(gameObject);
         gameManager.treesCollected++;
         canTakeOldTree = false;
+        gameManager.score++;
+
+        if (gameManager.treesCollected == 9)
+        {
+            gameManager.score = 0;
+        }
     }
 
     private void Sowing()
     {
+        gameManager.treesSown++;
+        gameManager.score = gameManager.treesSown;
         treeMesh.enabled = true;
+        sowing = false;
     }
 }

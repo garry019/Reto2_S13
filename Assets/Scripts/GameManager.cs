@@ -11,12 +11,15 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI trashScore;
     [SerializeField] private TextMeshProUGUI pollutionScore;
+    [SerializeField] private TextMeshProUGUI MissionText;
+    [SerializeField] private TextMeshProUGUI ScoreGoal;
     public int sliderValue;
     public int score = 5;
 
     public bool canReforest;
     public bool canTakeOldTrees;
     public int treesCollected;
+    public int treesSown;
 
     public bool canSow;
 
@@ -39,6 +42,8 @@ public class GameManager : MonoBehaviour
         {
             canReforest = true;
             canTakeOldTrees = true;
+            MissionText.text = "Ve a la zona de reforestación y tala los arboles muertos.";
+            ScoreGoal.text = "/9";
         }
         else
         {
@@ -48,6 +53,16 @@ public class GameManager : MonoBehaviour
         if (treesCollected == 9)
         {
             canSow = true;
+            MissionText.text = "Debes sembrar 2 árboles para reforestar la zona afectada.";
+            ScoreGoal.text = "/2";
+
+        }
+
+        if (treesSown == 2)
+        {
+            ScoreGoal.text = "";
+            trashScore.text = "";
+            MissionText.text = "!Nuestro parque esta libre de contaminación!";
         }
     }
 }
