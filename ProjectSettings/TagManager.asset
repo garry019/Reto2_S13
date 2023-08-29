@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Old_Tree
   - TreeToSow
+  - TrashCanIcon
   layers:
   - Default
   - TransparentFX

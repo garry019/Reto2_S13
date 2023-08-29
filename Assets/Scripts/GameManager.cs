@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     GameObject pollutionSlider;
+    GameObject[] trashCanIcons;
+    GameObject forestAreaIcon;
+    GameObject sowArea1Icon;
+    GameObject sowArea2Icon;
     Slider slider;
     
     [SerializeField] private TextMeshProUGUI trashScore;
@@ -27,6 +31,9 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = false;
         pollutionSlider = GameObject.Find("Slider");
+        forestAreaIcon = GameObject.Find("ForestAreaText");
+        sowArea1Icon = GameObject.Find("SowArea1");
+        sowArea2Icon = GameObject.Find("SowArea2");
         slider = pollutionSlider.GetComponent<Slider>();
         sliderValue = 100;
         treesCollected = 0;
@@ -44,6 +51,12 @@ public class GameManager : MonoBehaviour
             canTakeOldTrees = true;
             MissionText.text = "Ve a la zona de reforestación y tala los arboles muertos.";
             ScoreGoal.text = "/9";
+            trashCanIcons = GameObject.FindGameObjectsWithTag("TrashCanIcon");
+            foreach (GameObject icon in trashCanIcons)
+            {
+                icon.GetComponent<MeshRenderer>().enabled = false;
+            }
+            forestAreaIcon.GetComponent<MeshRenderer>().enabled = true;
         }
         else
         {
@@ -55,7 +68,9 @@ public class GameManager : MonoBehaviour
             canSow = true;
             MissionText.text = "Debes sembrar 2 árboles para reforestar la zona afectada.";
             ScoreGoal.text = "/2";
-
+            forestAreaIcon.GetComponent<MeshRenderer>().enabled = false;
+            sowArea1Icon.GetComponent<MeshRenderer>().enabled = true;
+            sowArea2Icon.GetComponent<MeshRenderer>().enabled = true;
         }
 
         if (treesSown == 2)
@@ -63,6 +78,8 @@ public class GameManager : MonoBehaviour
             ScoreGoal.text = "";
             trashScore.text = "";
             MissionText.text = "!Nuestro parque esta libre de contaminación!";
+            sowArea1Icon.GetComponent<MeshRenderer>().enabled = false;
+            sowArea2Icon.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }
