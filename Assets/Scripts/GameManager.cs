@@ -41,11 +41,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        slider.value = sliderValue;
-        pollutionScore.text = slider.value.ToString();
+        //slider.value = sliderValue;
+        //pollutionScore.text = slider.value.ToString();
         trashScore.text = score.ToString();
  
-        if (slider.value == 0)
+        /*if (slider.value == 0)
         {
             canReforest = true;
             canTakeOldTrees = true;
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         else
         {
             canReforest = false;
-        }
+        }*/
 
         if (treesCollected == 9)
         {
