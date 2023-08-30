@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         sowArea2Icon = GameObject.Find("SowArea2");
         credits = GameObject.Find("CreditsCanvas");
         canvasUI = GameObject.Find("Canvas");
+        trashCanIcons = GameObject.FindGameObjectsWithTag("TrashCanIcon");
         slider = pollutionSlider.GetComponent<Slider>();
         sliderValue = 100;
         treesCollected = 0;
@@ -49,7 +50,15 @@ public class GameManager : MonoBehaviour
         slider.value = sliderValue;
         pollutionScore.text = slider.value.ToString();
         trashScore.text = score.ToString();
- 
+
+        if (slider.value == 100 && score == 5)
+        {
+            foreach (GameObject icon in trashCanIcons)
+            {
+                icon.GetComponent<MeshRenderer>().enabled = true;
+            }
+        }
+
         if (slider.value == 0)
         {
             canReforest = true;
@@ -87,7 +96,7 @@ public class GameManager : MonoBehaviour
             sowArea1Icon.GetComponent<MeshRenderer>().enabled = false;
             sowArea2Icon.GetComponent<MeshRenderer>().enabled = false;
             credits.GetComponent<Canvas>().enabled = true;
-            canvasUI.GetComponent<Canvas>().enabled = false;
+            //canvasUI.GetComponent<Canvas>().enabled = false;
             Cursor.visible = true;
         }
     }

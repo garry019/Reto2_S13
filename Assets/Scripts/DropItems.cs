@@ -28,7 +28,7 @@ public class DropItems : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && gameObject.tag == "TrashCan")
+        if (other.gameObject.tag == "Player" && gameObject.tag == "TrashCan" && gameManager.score == 5)
         {
             canDrop = true;
         }

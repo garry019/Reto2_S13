@@ -21238,6 +21238,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1758897624}
     m_Modifications:
+    - target: {fileID: 315293073292779120, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 315293073292779125, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
       propertyPath: m_Name
       value: TrashCanText
@@ -23488,6 +23492,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1758897624}
     m_Modifications:
+    - target: {fileID: 315293073292779120, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 315293073292779125, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
       propertyPath: m_Name
       value: TrashCanText
@@ -79186,6 +79194,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1758897624}
     m_Modifications:
+    - target: {fileID: 315293073292779120, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 315293073292779125, guid: 250eb8ddeae503e4f9738a91d11b46cc, type: 3}
       propertyPath: m_Name
       value: TrashCanText

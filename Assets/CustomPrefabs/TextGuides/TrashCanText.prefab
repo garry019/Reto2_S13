@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 315293073292779126}
   - component: {fileID: 315293073292779120}
   - component: {fileID: 315293073292779127}
+  - component: {fileID: 3012001009026401377}
   m_Layer: 0
   m_Name: TrashCanText
   m_TagString: Untagged
@@ -172,3 +173,24 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 315293073292779120}
   m_maskType: 0
+--- !u!95 &3012001009026401377
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315293073292779125}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22e21a19e0ec727418d20c2c930eb738, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
