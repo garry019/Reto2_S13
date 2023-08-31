@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     GameObject credits;
     GameObject canvasUI;
     Slider slider;
-    
+
+    [SerializeField] public AudioSource ambient;
     [SerializeField] private TextMeshProUGUI trashScore;
     [SerializeField] private TextMeshProUGUI pollutionScore;
     [SerializeField] private TextMeshProUGUI MissionText;

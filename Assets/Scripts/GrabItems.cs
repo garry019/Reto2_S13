@@ -7,11 +7,17 @@ public class GrabItems : MonoBehaviour
     private bool canTake;
     GameObject gmObject;
     GameManager gameManager;
+    GameObject notification;
+    AudioSource notificationSound;
+
+    [SerializeField] public AudioSource pickUp;
 
     private void Start()
     {
         gmObject = GameObject.Find("GameManager");
         gameManager = gmObject.GetComponent<GameManager>();
+        notification = GameObject.Find("Notification");
+        notificationSound = notification.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -39,5 +45,11 @@ public class GrabItems : MonoBehaviour
     {
         gameManager.score++;
         Destroy(gameObject);
+        pickUp.Play();
+
+        if (gameManager.score == 5)
+        {
+            notificationSound.Play();
+        }
     }
 }

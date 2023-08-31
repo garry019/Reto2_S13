@@ -6,6 +6,8 @@ public class DropItems : MonoBehaviour
 {
     GameObject gmObject;
     GameManager gameManager;
+    GameObject notification;
+    AudioSource notificationSound;
     private bool canDrop;
     private int pollutionScore;
 
@@ -14,6 +16,8 @@ public class DropItems : MonoBehaviour
     {
         gmObject = GameObject.Find("GameManager");
         gameManager = gmObject.GetComponent<GameManager>();
+        notification = GameObject.Find("Notification");
+        notificationSound = notification.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,5 +48,6 @@ public class DropItems : MonoBehaviour
         pollutionScore = gameManager.score * 20;
         gameManager.score = 0;
         gameManager.sliderValue = gameManager.sliderValue - pollutionScore;
+        notificationSound.Play();
     }
 }

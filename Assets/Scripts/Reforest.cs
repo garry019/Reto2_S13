@@ -8,6 +8,12 @@ public class Reforest : MonoBehaviour
     GameObject gmObject;
     GameManager gameManager;
     Renderer treeMesh;
+    GameObject woodSmash;
+    AudioSource woodSmashSound;
+    GameObject notification;
+    AudioSource notificationSound;
+    GameObject treeSow;
+    AudioSource treeSowSound;
 
     public bool canTakeOldTree;
     public bool sowing;
@@ -18,6 +24,12 @@ public class Reforest : MonoBehaviour
         gmObject = GameObject.Find("GameManager");
         gameManager = gmObject.GetComponent<GameManager>();
         treeMesh = gameObject.GetComponent<MeshRenderer>();
+        woodSmash = GameObject.Find("WoodSmash");
+        woodSmashSound = woodSmash.GetComponent<AudioSource>();
+        notification = GameObject.Find("Notification");
+        notificationSound = notification.GetComponent<AudioSource>();
+        treeSow = GameObject.Find("Sowing");
+        treeSowSound = treeSow.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -56,10 +68,12 @@ public class Reforest : MonoBehaviour
         gameManager.treesCollected++;
         canTakeOldTree = false;
         gameManager.score++;
+        woodSmashSound.Play();
 
         if (gameManager.treesCollected == 9)
         {
             gameManager.score = 0;
+            notificationSound.Play();
         }
     }
 
@@ -69,5 +83,11 @@ public class Reforest : MonoBehaviour
         gameManager.score = gameManager.treesSown;
         treeMesh.enabled = true;
         sowing = false;
+        treeSowSound.Play();
+
+        if (gameManager.treesSown == 2)
+        {
+            notificationSound.Play();
+        }
     }
 }
