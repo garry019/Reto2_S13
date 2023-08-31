@@ -21,7 +21,6 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         Look();
-        //Debug.DrawRay(transform.position, transform.forward * 2, Color.red);
     }
 
     private void Look()

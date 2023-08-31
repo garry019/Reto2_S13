@@ -46,7 +46,6 @@ public class GrabItems : MonoBehaviour
         gameManager.score++;
         Destroy(gameObject);
         pickUp.Play();
-
         if (gameManager.score == 5)
         {
             notificationSound.Play();

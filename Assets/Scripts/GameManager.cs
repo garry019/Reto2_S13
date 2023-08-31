@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         sowArea1Icon = GameObject.Find("SowArea1");
         sowArea2Icon = GameObject.Find("SowArea2");
         credits = GameObject.Find("CreditsCanvas");
-        canvasUI = GameObject.Find("Canvas");
+        //canvasUI = GameObject.Find("Canvas");
         trashCanIcons = GameObject.FindGameObjectsWithTag("TrashCanIcon");
         slider = pollutionSlider.GetComponent<Slider>();
         sliderValue = 100;
@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
         slider.value = sliderValue;
         pollutionScore.text = slider.value.ToString();
         trashScore.text = score.ToString();
+
+        Debug.Log(RenderSettings.fogDensity);
 
         if (slider.value == 100 && score == 5)
         {
@@ -72,7 +74,12 @@ public class GameManager : MonoBehaviour
                 icon.GetComponent<MeshRenderer>().enabled = false;
             }
             forestAreaIcon.GetComponent<MeshRenderer>().enabled = true;
-            RenderSettings.fogDensity = 0f;
+
+            if (RenderSettings.fogDensity > 0)
+            {
+                RenderSettings.fogDensity -= 0.005f * Time.deltaTime;
+            }
+
         }
         else
         {
